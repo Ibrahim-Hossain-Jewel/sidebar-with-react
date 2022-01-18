@@ -1,16 +1,19 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/header/header.component';
-import './App.css';
+import industries from './components/industries/industries.component';
+//Quick component for Route testing purpose.
 
-class App extends React.Component{
-    render(){
+
+function App (){
       return(
         <div>
-        <h1>Hello world</h1>
-          <Header />
+          <Switch>
+            <Route exact path = '/' component = {Header} />
+            <Route exact path= '/industries' component = {industries}/>
+          </Switch>
         </div>
       )
-    }
 }
 
 export default App;

@@ -1,0 +1,21 @@
+.image {
+    width: 250px;
+    height: 180px;
+    background-position: center;
+    background-size: cover; 
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.imagePortion{
+    width: 250px;
+    padding: 20px;
+    transition: transform .5s ease;
+    &:hover{
+        background-color: gray;
+        border-radius: 5px;
+        transform: scale(1.1);
+    };
+    
+}
+

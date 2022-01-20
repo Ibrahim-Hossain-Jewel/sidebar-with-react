@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {FaAngleRight } from 'react-icons/fa';
-import industries from "../industries/industries.component";
 import './dropdown.styles.scss';
 
 class Dropdown extends React.Component{
@@ -25,8 +23,8 @@ class Dropdown extends React.Component{
       }
 
       render(){
-        const{list} = this.props
-        const{listOpen, headerTitle} = this.state
+        const{list} = this.props;
+        const{listOpen, headerTitle} = this.state;
         return(
           <div className="dd-wrapper">
             <div className="dd-header" onClick={() => this.toggleList()}>

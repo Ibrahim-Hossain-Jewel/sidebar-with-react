@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
+//import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import './dropdown.styles.scss';
 
 class Dropdown extends React.Component{
@@ -29,10 +29,6 @@ class Dropdown extends React.Component{
           <div className="dd-wrapper">
             <div className="dd-header" onClick={() => this.toggleList()}>
                 <div className = " dd-header-title " >{headerTitle}</div>
-                {listOpen
-                    ? <FaAngleDown />
-                    : <FaAngleUp />
-                }
             </div>
 
       {listOpen && <ul className="dd-list">

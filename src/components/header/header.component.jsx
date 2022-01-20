@@ -10,37 +10,37 @@ class Header extends React.Component{
             location: [
                 {
                     id: 0,
-                    title: 'New York',
+                    title: 'Advisory & Consulting',
                     selected: false,
                     key: 'location'
                 },
                 {
                   id: 1,
-                  title: 'Dublin',
+                  title: 'Cloud Services',
                   selected: false,
                   key: 'location'
                 },
                 {
                   id: 2,
-                  title: 'California',
+                  title: 'Contact Centers',
                   selected: false,
                   key: 'location'
                 },
                 {
                   id: 3,
-                  title: 'Istanbul',
+                  title: 'Customer Experience',
                   selected: false,
                   key: 'location'
                 },
                 {
                   id: 4,
-                  title: 'Izmir',
+                  title: 'Data Analytics',
                   selected: false,
                   key: 'location'
                 },
                 {
                   id: 5,
-                  title: 'Oslo',
+                  title: 'Data Center',
                   selected: false,
                   key: 'location'
                 }
@@ -53,7 +53,7 @@ class Header extends React.Component{
             <div className="header"> 
                 <div className="options">
                     <div className="pages">
-                        <span className="option">
+                        <span className="option dropdownHeader">
                             <Dropdown title = "Solutions" list = {this.state.location} />
                         </span>
                         <span className="splitUp">

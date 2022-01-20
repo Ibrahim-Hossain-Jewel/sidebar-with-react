@@ -5,8 +5,8 @@
 }
 $navBackground : #ffffff;
 $navFontColor : #0A186E;
-.header{
-    
+.pages{
+    display: flex;
 }
 .options{
     background-color: $navBackground;
@@ -14,11 +14,14 @@ $navFontColor : #0A186E;
     margin: 0 auto;
     
 }
+.dropdownHeader{
+    
+}
 .option{
     font-size: 16px;
     display: inline-block;
     cursor: pointer;
-    padding: 0px 30px;
+    padding: 24px 30px;
     font-weight: 600;
     font-style: normal;
     ;

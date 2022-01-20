@@ -9,6 +9,13 @@
 .FaAngleDown{
     padding: 100px;
 }
-.splitUp{
-    position:absolute;
+
+.dd-list{
+    list-style: none;
+    position: absolute;
+    padding: 30px;
+    background-color: #F0F0F0;
+}
+.dd-list-item{
+    width: 100%;
 }

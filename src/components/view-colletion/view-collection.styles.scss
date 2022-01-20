@@ -3,19 +3,26 @@
     height: 180px;
     background-position: center;
     background-size: cover; 
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     background-repeat: no-repeat;
     border-radius: 5px;
+
+    
 }
+.imagePortion .image {
+    transition: transform .5s ease;
+    display: block;
+}
+.imagePortion:hover .image {
+    transform: scale(1.1);
+  }
+
 .imagePortion{
     width: 250px;
     padding: 20px;
-    transition: transform .5s ease;
     &:hover{
         background-color: gray;
         border-radius: 5px;
-        transform: scale(1.1);
     };
-    
 }
 

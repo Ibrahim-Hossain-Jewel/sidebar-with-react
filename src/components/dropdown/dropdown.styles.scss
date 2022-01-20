@@ -6,16 +6,30 @@
 .dd-header-title{
     display: inline-block;
 }
-.FaAngleDown{
-    padding: 100px;
-}
 
 .dd-list{
     list-style: none;
     position: absolute;
-    padding: 30px;
-    background-color: #F0F0F0;
+    left: 30px;
+    top: 97px;
+    background-color: #ffffff;
+    box-shadow: .5px .5px 3px gray;
+}
+.list-container{
+    padding-left: 14px;
+    list-style: none;
+    
 }
 .dd-list-item{
-    width: 100%;
+    width: 330px;
+    text-indent: 20px;
+    &:hover{
+        color: #0055ff;
+        background-color: #F0F0F0;
+        width: 330px;
+    }
+}
+.dropDownRightArrow{
+    position: absolute;
+    left: 290px;
 }

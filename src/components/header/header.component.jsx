@@ -10,19 +10,19 @@ class Header extends React.Component{
             location: [
                 {
                     id: 0,
-                    title: 'Advisory & Consulting',
+                    title: ' Advisory & Consulting',
                     selected: false,
                     key: 'location'
                 },
                 {
                   id: 1,
-                  title: 'Cloud Services',
+                  title: ' Cloud Services',
                   selected: false,
                   key: 'location'
                 },
                 {
                   id: 2,
-                  title: 'Contact Centers',
+                  title: ' Contact Centers',
                   selected: false,
                   key: 'location'
                 },
@@ -52,16 +52,18 @@ class Header extends React.Component{
         return(
             <div className="header"> 
                 <div className="options">
-                    <div className="pages">
-                        <span className="option dropdownHeader">
-                            <Dropdown title = "Solutions" list = {this.state.location} />
-                        </span>
-                        <span className="splitUp">
+                    <div className="gridContainer">
+                        <div className="option">Logo</div>
+                        <div className="splitUp">
+                            <span className="option dropdownHeader">
+                                <Dropdown title = "Solutions" list = {this.state.location} />
+                            </span>
                             <Link to = '/industries' className="option">Industries</Link>
                             <Link to = '/discover' className="option">Discover</Link>
                             <Link to = '/aboutUs' className="option">About Us</Link>
                             <Link to = '/careers' className="option">Careers</Link>
-                        </span>
+                        </div>
+                        <div className="option">Hello world </div>
                     </div>
                 </div>
             </div>

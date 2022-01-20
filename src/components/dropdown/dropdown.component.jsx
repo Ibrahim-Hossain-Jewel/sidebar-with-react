@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {FaAngleRight } from 'react-icons/fa';
+import industries from "../industries/industries.component";
 import './dropdown.styles.scss';
 
 class Dropdown extends React.Component{

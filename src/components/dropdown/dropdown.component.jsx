@@ -10,9 +10,13 @@ class Dropdown extends React.Component{
         this.state = {
           listOpen: false,
           headerTitle: this.props.title,
-          allobj: props.superProps
+          allobj: props.superProps,
+          clicked: []
         }
+        console.log(this.state.clicked);
       }
+      
+
       handleClickOutside(){
         this.setState({
           listOpen: false
@@ -21,10 +25,10 @@ class Dropdown extends React.Component{
       toggleList(){
         this.setState(prevState => ({
           listOpen: !prevState.listOpen
+          
         }))
       }
       render(){
-          console.log(this.state.allobj)
         const{list} = this.props;
         const{listOpen, headerTitle} = this.state;
         return(
@@ -32,14 +36,23 @@ class Dropdown extends React.Component{
             <div className="dd-header" onClick={() => this.toggleList()}>
                 <div className = " dd-header-title " >{headerTitle}</div>
             </div>
-
             {listOpen && <ul className="dd-list">
              {list.map((item) => (
-               <ul className="list-container" key={item.id}>
-                <li className="dd-list-item" key={item.id} > {item.title} <span className="dropDownRightArrow"> <FaAngleRight /> </span> </li>
-               </ul>
+                    <ul className="list-container" key={item.id}>
+                    <li className="dd-list-item" key={item.id} onClick={(props) => {
+                            if(props.target.outerText == "Advisory & Consulting"){
+                                this.state.clicked.push("Advisory & Consulting")
+                            }if(props.target.outerText == "Cloud Services"){
+                                this.state.clicked.push("Cloud Services")
+                            }
+                            if(props.target.outerText == "Contact Centers"){
+                                this.state.clicked.push("Contact Centers")
+                            }
+                    }} > {item.title} <span className="dropDownRightArrow"> <FaAngleRight /> </span> </li>
+                    </ul>
               ))}
             </ul>}
+            
           </div>
         )
       }

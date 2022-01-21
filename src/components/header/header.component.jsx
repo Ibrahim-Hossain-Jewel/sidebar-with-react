@@ -4,9 +4,10 @@ import './header.styles.scss';
 import Dropdown from "../dropdown/dropdown.component";
 
 class Header extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
+            allobj: props,
             location: [
                 {
                     id: 0,
@@ -49,6 +50,8 @@ class Header extends React.Component{
 
     }
     render(){
+        console.log(this.state.allobj)
+        console.log("Your passed props are below!");
         return(
             <div className="header"> 
                 <div className="options">
@@ -56,7 +59,7 @@ class Header extends React.Component{
                         <div className="option">Logo</div>
                         <div className="splitUp">
                             <span className="option dropdownHeader">
-                                <Dropdown title = "Solutions" list = {this.state.location} />
+                                <Dropdown title = "Solutions" list = {this.state.location} superProps = {this.state.allobj} />
                             </span>
                             <Link to = '/industries' className="option">Industries</Link>
                             <Link to = '/discover' className="option">Discover</Link>

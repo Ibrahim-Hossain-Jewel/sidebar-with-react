@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import collectionItem from "../services-collections/service-collection.component";
 import {FaAngleRight } from 'react-icons/fa';
 import './dropdown.styles.scss';
 
@@ -7,7 +9,8 @@ class Dropdown extends React.Component{
         super(props)
         this.state = {
           listOpen: false,
-          headerTitle: this.props.title
+          headerTitle: this.props.title,
+          allobj: props.superProps
         }
       }
       handleClickOutside(){
@@ -15,14 +18,13 @@ class Dropdown extends React.Component{
           listOpen: false
         })
       }
-
       toggleList(){
         this.setState(prevState => ({
           listOpen: !prevState.listOpen
         }))
       }
-
       render(){
+          console.log(this.state.allobj)
         const{list} = this.props;
         const{listOpen, headerTitle} = this.state;
         return(
@@ -33,8 +35,8 @@ class Dropdown extends React.Component{
 
             {listOpen && <ul className="dd-list">
              {list.map((item) => (
-               <ul className="list-container">
-                <li className="dd-list-item" key={item.id} >{item.title} <span className="dropDownRightArrow"> <FaAngleRight /> </span> </li>
+               <ul className="list-container" key={item.id}>
+                <li className="dd-list-item" key={item.id} > {item.title} <span className="dropDownRightArrow"> <FaAngleRight /> </span> </li>
                </ul>
               ))}
             </ul>}

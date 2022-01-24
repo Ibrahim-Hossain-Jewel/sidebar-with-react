@@ -1,1 +1,124 @@
-=
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #eee;
+    font-family: 'Bigelow Rules', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Playfair Display', serif;
+}
+.side-menu{
+    background-color: black;
+    width: 300px;
+    position: fixed;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    transition: width 1s ease-in;
+}
+.side-menu.inactive{
+    width: 80px;
+}
+/*To freely moved inside the top-section container so we used here position relative*/
+.side-menu .top-section{
+    position: relative;
+}
+.side-menu .top-section .logo{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    display: inline-block;
+}
+.side-menu .top-section .logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/*toggle-menu-btn*/
+.side-menu .top-section .toggle-menu-btn{
+    color: #333;
+    display: block;
+    font-size: 20px;
+    position: absolute;
+    top: 15%;
+    right: 0%;
+    transform: translateY(-50%); /* indicating down toward upper this toggle-menu-btn */
+    cursor: pointer;
+}
+/*incase if inactive class is present then .side-menu.inactive */
+.side-menu.inactive .top-section .toggle-menu-btn{
+    right: -50px;
+}
+.side-menu .top-section .search-controller{
+    position: relative;
+    color: #fff;
+}
+.side-menu .top-section .search-controller .search-btn{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    top: 50%;
+    font-size: 20px;
+    color: #666;
+    transform: translateY(-50%);
+    
+}
+ 
+.side-menu .top-section .search-controller input[type=text]{
+    border: 0;
+    outline: none;
+    width: 100%;
+    height: 35px;
+    background-color: #333;
+    border-radius: 5px;
+    display: block;
+    margin: 20px 0px;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+}
+/*Working with main-menu*/
+.side-menu .main-menu .menu-item{
+    color: #333;
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+.side-menu .main-menu .menu-item .menu-icon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+}
+/*Working with sub-menu*/
+.side-menu .main-menu .sub-menu{
+    color: #333;
+    margin-left: 20px;
+    border-left: 1px solid #333;
+    padding-left: 30px;
+}
+.side-menu .main-menu .sub-menu a{
+   display: block;
+    margin: 9px 0;
+    font-size: 15px;
+    font-weight: 600;
+}

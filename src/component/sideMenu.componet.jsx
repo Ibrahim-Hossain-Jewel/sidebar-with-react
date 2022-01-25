@@ -1,8 +1,27 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import logo from '../assets/logo/webscript.png';
+import User from '../assets/user.jpg'
+import MenuItem from './menuItem';
 
 export default function SideMenu(props) {
+  const MenuItems = [
+    {
+      name: 'Dashboard',
+      to: '/'
+    },
+    {
+      name: 'Content',
+      to: '/content',
+      subMenus: [
+        {name: 'Courses'},
+        {name: 'Videos'}
+      ]
+    },
+    {
+      name: 'Design',
+      to: '/design'}
+  ]
   const [inactive, setinactive] = useState(false);
   return <div className={`side-menu ${inactive? 'inactive': ''}`}>
     <div className='top-section'>
@@ -14,7 +33,6 @@ export default function SideMenu(props) {
           <i className="bi bi-arrow-right-square-fill"></i>
            : <i className="bi bi-arrow-left-square-fill"></i>
           }
-        
       </div>
       <div className='search-controller'>
         <button className='search-btn'>
@@ -25,39 +43,50 @@ export default function SideMenu(props) {
       <div className='divider'></div>
       <div className='main-menu'>
           <ul>
-            <li>
+            {/*
+              <li>
               <a className='menu-item'>
                 <div className='menu-icon'>
                   <i className="bi bi-speedometer2"></i>
                 </div>
-                Dashboard
+                <span>Dashboard</span>
               </a>
             </li>
-            <li>
-              <a className='menu-item'>
-                <div className='menu-icon'>
-                <i className="bi bi-newspaper"></i>
-                </div>
-                Content
-              </a>
-              <ul className='sub-menu'>
-                <li>
-                  <a>Courses</a>
-                </li>
-                <li>
-                  <a>Videos</a>
-                </li>
-              </ul>
-            </li>
+            <MenuItem name = {"Contact"} subMenus = { [
+              {name: 'Courses'},
+              {name: 'Videos'}
+            ]} />
             <li>
               <a className='menu-item'>
                 <div className='menu-icon'>
                   <i className="bi bi-vector-pen"></i>
                 </div>
-                Design
+                <span>Design</span>
               </a>
             </li>
+            */}
+            {
+              MenuItems.map((item, index)=>(
+                <MenuItem 
+                  key = {index}
+                  name = {item.name}
+                  subMenus = {item.subMenus || []}
+                  to = {item.to}
+                />
+              ))
+            }
           </ul>
+      </div>
+      
+    </div>
+    {/*Side-menu footer*/}
+    <div className='side-menu-footer'>
+      <div className='avatar'>
+        <img src = {User} alt='avatar location'/>
+      </div>
+      <div className='user-info'>
+        <h5>Jewel Rana</h5>
+        <p>jewel@gmail.com</p>
       </div>
     </div>
   </div>;

@@ -50,7 +50,7 @@ body{
     display: block;
     font-size: 20px;
     position: absolute;
-    top: 15%;
+    top: 6%;
     right: 0%;
     transform: translateY(-50%); /* indicating down toward upper this toggle-menu-btn */
     cursor: pointer;
@@ -96,10 +96,24 @@ body{
 /*Working with main-menu*/
 .side-menu .main-menu .menu-item{
     color: #333;
-    display: block;
+    display: inline-block;
     text-decoration: none;
     font-size: 15px;
     cursor: pointer;
+}
+.side-menu .main-menu .menu-item span{
+    position: absolute;
+    line-height: 40px;
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    cursor: pointer;
+}
+.side-menu.inactive .main-menu .menu-item span{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 .side-menu .main-menu .menu-item .menu-icon{
     display: inline-block;
@@ -115,10 +129,58 @@ body{
     margin-left: 20px;
     border-left: 1px solid #333;
     padding-left: 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-in;
+}
+.side-menu .main-menu .sub-menu.expand{
+    max-height: 200px;
 }
 .side-menu .main-menu .sub-menu a{
    display: block;
     margin: 9px 0;
     font-size: 15px;
     font-weight: 600;
+}
+
+.side-menu-footer{
+    width: 100%;
+    background-color: #333;
+    height: 100px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.side-menu .side-menu-footer .avatar{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+.side-menu .side-menu-footer .avatar img{
+    max-width: 100%;
+}
+
+.side-menu .side-menu-footer .user-info{
+    display: inline-block;
+    margin: 0px 10px;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+.side-menu.inactive .side-menu-footer .user-info{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.side-menu .side-menu-footer .user-info h5{
+    font-size: 15px;
+}
+.side-menu .side-menu-footer .user-info p{
+    font-size: 14px;
 }

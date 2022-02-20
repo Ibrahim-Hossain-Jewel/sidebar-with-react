@@ -1,13 +1,13 @@
 import React,{useState} from 'react';
 
 export default function MenuItem(props) {
-    const {name,subMenus} = props;
+    const { name, subMenus, iconClassName, onClick } = props;
     const [expand, setexpand] = useState(false);
     return (
-    <li>
+    <li onClick={onClick}>
         <a className='menu-item' onClick={ ()=> setexpand(!expand) }>
-            <div className='menu-icon'>
-                <i className="bi bi-newspaper"></i>
+            <div className = 'menu-icon'>
+                <i className = {iconClassName}></i>
             </div>
             <span>{name}</span>
         </a>

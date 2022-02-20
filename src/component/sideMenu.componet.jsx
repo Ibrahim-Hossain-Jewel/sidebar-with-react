@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import logo from '../assets/logo/webscript.png';
 import User from '../assets/user.jpg'
@@ -8,10 +8,12 @@ export default function SideMenu(props) {
   const MenuItems = [
     {
       name: 'Dashboard',
-      to: '/'
+      to: '/',
+      iconClassName: 'bi bi-speedometer2'
     },
     {
       name: 'Content',
+      iconClassName: 'bi bi-newspaper',
       to: '/content',
       subMenus: [
         {name: 'Courses'},
@@ -20,9 +22,15 @@ export default function SideMenu(props) {
     },
     {
       name: 'Design',
-      to: '/design'}
+      to: '/design',
+      iconClassName: 'bi bi-vector-pen'
+    }
   ]
   const [inactive, setinactive] = useState(false);
+  useEffect(()=>{
+    document.querySelectorAll("sub-menu").forEach(cl=>
+      cl.classList.remove('active'))
+  })
   return <div className={`side-menu ${inactive? 'inactive': ''}`}>
     <div className='top-section'>
       <div className='logo'>
@@ -44,7 +52,7 @@ export default function SideMenu(props) {
       <div className='main-menu'>
           <ul>
             {/*
-              <li>
+            <li>
               <a className='menu-item'>
                 <div className='menu-icon'>
                   <i className="bi bi-speedometer2"></i>
@@ -72,6 +80,14 @@ export default function SideMenu(props) {
                   name = {item.name}
                   subMenus = {item.subMenus || []}
                   to = {item.to}
+                  iconClassName = {item.iconClassName}
+                  onClick = {
+                    ()=>{
+                      if(inactive){
+                        setinactive(false)
+                      }
+                    }
+                  }
                 />
               ))
             }
